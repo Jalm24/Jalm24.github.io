@@ -29,13 +29,9 @@
         var imagen = document.getElementById("imagen").value;
         var id = document.getElementById("id").value;
       // Llamamos a la función enviarMensajeEmbed con esos valores
-        if (id = ("1234" || "4321" || "2003")) {
+        if (id == "1234" || id == "4321" || id == "2003") {
             enviarMensajeEmbed(nombre, version, descripcion, imagen);
         }
-        else {
-            return;
-        }
-   
     }
     // Esta función envía un mensaje embed a un webhook de discord
     // Los parámetros son: nombre, versión, descripción e imagen
