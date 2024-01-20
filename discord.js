@@ -1,8 +1,8 @@
-function enviarMensajeEmbed(nombre, version, descripcion, imagen) {
+  function enviarMensajeEmbed(nombre, version, descripcion, imagen) {
   // Creamos un objeto XMLHttpRequest para hacer la petición
   var xhr = new XMLHttpRequest();
   // Abrimos la conexión con el método POST y la URL del webhook
-  xhr.open("POST", "https://discord.com/api/webhooks/WEBHOOK_ID/WEBHOOK_TOKEN");
+  xhr.open("POST", "https://discord.com/api/webhooks/1113955060863484024/9vRng3-D6lNdzmtaa6budrfbqSf2zq1X3AHEcatx_LEx_Dak8KAXLQVS5OhVnazfTvoK");
   // Establecemos el tipo de contenido a JSON
   xhr.setRequestHeader("Content-Type", "application/json");
   // Creamos el objeto embed con los datos que queremos enviar
