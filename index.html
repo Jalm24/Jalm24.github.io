@@ -70,21 +70,16 @@ var embed = {
   }
 };
 // Creamos el objeto botón con el texto y el enlace que queremos
-var button = {
-  type: 2, // Tipo botón
-  style: 5, // Estilo LINK
-  label: disb, // Texto del botón
-  url: link // URL del enlace
-};
-// Creamos la fila de acción con el botón que hemos creado
-var actionRow = {
-  type: 1, // Tipo fila de acción
-  components: [button] // Componentes de la fila de acción
-};
+var componentes = {
+                        type: 2,
+                        label: disb,
+                        style: 5,
+	url: link,
+            }
 // Creamos el objeto data con el embed y la fila de acción
 var data = JSON.stringify({
   embeds: [embed],
-  components: [actionRow]
+  components: [componentes]
 });
 // Enviamos el objeto data al webhook
 xhr.send(data);
