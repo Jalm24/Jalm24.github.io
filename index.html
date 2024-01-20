@@ -22,8 +22,8 @@
     <label for="imagen">Imagen:</label>
     <input type="text" id="imagen" name="imagen"><br>
     <hr>
+    <label for="url">URL del proyecto <br>(puede ser enlace de descarga, <br>server de discord o pagina web):</label>
     <input type="text" id="url" name="url"><br>
-        <label for="url">URL del proyecto <br>(puede ser enlace de descarga, <br>server de discord o pagina web):</label>
     <hr>
     <button type="button" onclick="enviarAlerta()">Enviar</button>
   </form>
@@ -63,8 +63,8 @@ var embed = {
   },
   fields: [
     {
-      name: "Visita mi web",
-      value: `[Haz clic aquí] (${url})`,
+      name: "Quieres conseguir este proyecto?",
+      value: `[Haz clic aquí](${url})`,
       inline: false
     }
   ]
