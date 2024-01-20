@@ -28,12 +28,12 @@
       var descripcion = document.getElementById("descripcion").value;
         var imagen = document.getElementById("imagen").value;
         var id = document.getElementById("id").value;
-      enviarMensajeEmbed(nombre, version, descripcion, imagen);
+      enviarMensajeEmbed(nombre, version, descripcion, imagen, id);
       // Llamamos a la función enviarMensajeEmbed con esos valores
     }
     // Esta función envía un mensaje embed a un webhook de discord
     // Los parámetros son: nombre, versión, descripción e imagen
-    function enviarMensajeEmbed(nombre, version, descripcion, imagen) {
+    function enviarMensajeEmbed(nombre, version, descripcion, imagen, id) {
       // Creamos un objeto XMLHttpRequest para hacer la petición
       var xhr = new XMLHttpRequest();
       // Abrimos la conexión con el método POST y la URL del webhook
