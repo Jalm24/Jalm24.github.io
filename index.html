@@ -16,6 +16,10 @@
     <input type="text" id="descripcion" name="descripcion"><br>
     <label for="imagen">Imagen:</label>
     <input type="text" id="imagen" name="imagen"><br>
+	    <label for="link">donde conseguir el proyecto <br>(enlace de descarga, pagina web o server de discord):</label>
+    <input type="text" id="link" name="link"><br>
+	    <label for="disb">Texto del boton <br>(puede ser personalizado o uno de <br> los siguientes: Descargar, Discord, WEB):</label>
+    <input type="text" id="disb" name="disb"><br>
     <button type="button" id="boton-enviar" onclick="enviarAlerta()">Enviar</button>
 
   </form>
@@ -30,11 +34,13 @@ function enviarAlerta() {
   var descripcion = document.getElementById("descripcion").value;
   var imagen = document.getElementById("imagen").value;
   var ide = document.getElementById("ide").value;
+  var link = document.getElementById("link").value;
+  var disb = document.getElementById("disb").value;
   // Deshabilitamos el botón de enviar
   var boton = document.getElementById("boton-enviar");
   boton.disabled = true;
   // Llamamos a la función enviarMensajeEmbed con esos valores
-  enviarMensajeEmbed(nombre, version, descripcion, imagen, ide);
+  enviarMensajeEmbed(nombre, version, descripcion, imagen, ide, link, disb);
   // Habilitamos el botón de enviar después de 10 segundos
   setTimeout(function() {
     boton.disabled = false;
@@ -43,31 +49,40 @@ function enviarAlerta() {
 
     // Esta función envía un mensaje embed a un webhook de discord
     // Los parámetros son: nombre, versión, descripción e imagen
-    function enviarMensajeEmbed(nombre, version, descripcion, imagen, ide) {
+    function enviarMensajeEmbed(nombre, version, descripcion, imagen, ide, link, disb) {
       // Creamos un objeto XMLHttpRequest para hacer la petición
       if (ide == "2278112087" || ide == "8118985682" || ide == "9873282866" || ide == "6485718963" || ide == "1799267670" || ide == "3025331413" || ide == "6887190794" || ide == "3666722833" || ide == "2100177714" || ide == "3187453478"){
       var xhr = new XMLHttpRequest();
       // Abrimos la conexión con el método POST y la URL del webhook
-      xhr.open("POST", "https://discord.com/api/webhooks/1198097169270452385/GWkNH_4cPPnzan3LAzq-PuEmTfXFBhKzAEpVXxXcw0CWXCvNIJNdCOH-OPZyCTaRTIxM");
+      xhr.open("POST", "https://discord.com/api/webhooks/1113955060863484024/9vRng3-D6lNdzmtaa6budrfbqSf2zq1X3AHEcatx_LEx_Dak8KAXLQVS5OhVnazfTvoK");
       // Establecemos el tipo de contenido a JSON
       xhr.setRequestHeader("Content-Type", "application/json");
       // Creamos el objeto embed con los datos que queremos enviar
-      var embed = {
-        title: nombre,
-        description: descripcion,
-        image: {
-          url: imagen
-        },
-        footer: {
-          text: "Versión: " + version
-        }
-      };
-      // Convertimos el objeto embed a una cadena JSON
-      var data = JSON.stringify({
-        embeds: [embed]
-      });
-      // Enviamos la petición con los datos del embed
-      xhr.send(data);
+// Creamos el objeto embed con los datos que queremos enviar
+var embed = {
+  title: nombre,
+  description: descripcion,
+  image: {
+    url: imagen
+  },
+  footer: {
+    text: "Versión: " + version
+  }
+};
+// Creamos el botón con el enlace a la página web
+var boton = new MessageButton()
+  .setLabel(disb) // el texto que aparecerá en el botón
+  .setURL(link) // la URL que se abrirá al hacer clic
+  .setStyle("LINK"); // el estilo del botón
+// Creamos la fila de componentes y le añadimos el botón
+var fila = new MessageActionRow()
+  .addComponents(boton);
+// Enviamos el embed y la fila de componentes
+var data = JSON.stringify({
+  embeds: [embed],
+  components: [fila]
+});
+xhr.send(data);
     }
     }
   </script>
