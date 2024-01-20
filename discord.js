@@ -2,7 +2,7 @@
 const discord = require('discord.js');
 
 // Crear un webhook con el id y el token existentes
-const webhook = new discord.WebhookClient('id', 'token');
+const webhook = new discord.WebhookClient('719579808320716920', '9vRng3-D6lNdzmtaa6budrfbqSf2zq1X3AHEcatx_LEx_Dak8KAXLQVS5OhVnazfTvoK');
 
 // O crear un webhook con la URL completa
 // const webhook = new discord.WebhookClient({ url: 'https://discord.com/api/webhooks/id/token' });
