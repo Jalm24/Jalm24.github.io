@@ -16,40 +16,27 @@
     <input type="text" id="descripcion" name="descripcion"><br>
     <label for="imagen">Imagen:</label>
     <input type="text" id="imagen" name="imagen"><br>
-	    <label for="link">donde conseguir el proyecto <br>(enlace de descarga, pagina web o server de discord):</label>
-    <input type="text" id="link" name="link"><br>
-	    <label for="disb">Texto del boton <br>(puede ser personalizado o uno de <br> los siguientes: Descargar, Discord, WEB):</label>
-    <input type="text" id="disb" name="disb"><br>
-    <button type="button" id="boton-enviar" onclick="enviarAlerta()">Enviar</button>
-
+    <label for="url">URL:</label>
+    <input type="text" id="url" name="url"><br>
+    <button type="button" onclick="enviarAlerta()">Enviar</button>
   </form>
   <script src="discord.js"></script>
   <script>
     // Esta función se ejecuta cuando el usuario hace clic en el botón de enviar
-// Esta función se ejecuta cuando el usuario hace clic en el botón de enviar
-function enviarAlerta() {
-  // Obtenemos los valores de los inputs
-  var nombre = document.getElementById("nombre").value;
-  var version = document.getElementById("version").value;
-  var descripcion = document.getElementById("descripcion").value;
-  var imagen = document.getElementById("imagen").value;
-  var ide = document.getElementById("ide").value;
-  var link = document.getElementById("link").value;
-  var disb = document.getElementById("disb").value;
-  // Deshabilitamos el botón de enviar
-  var boton = document.getElementById("boton-enviar");
-  boton.disabled = true;
-  // Llamamos a la función enviarMensajeEmbed con esos valores
-  enviarMensajeEmbed(nombre, version, descripcion, imagen, ide, link, disb);
-  // Habilitamos el botón de enviar después de 10 segundos
-  setTimeout(function() {
-    boton.disabled = false;
-  }, 10000);
-}
-
+    function enviarAlerta() {
+      // Obtenemos los valores de los inputs
+      var nombre = document.getElementById("nombre").value;
+      var version = document.getElementById("version").value;
+      var descripcion = document.getElementById("descripcion").value;
+      var imagen = document.getElementById("imagen").value;
+      var ide = document.getElementById("ide").value;
+      var url = document.getElementById("url").value;
+      // Llamamos a la función enviarMensajeEmbed con esos valores
+      enviarMensajeEmbed(nombre, version, descripcion, imagen, ide, url);
+    }
     // Esta función envía un mensaje embed a un webhook de discord
-    // Los parámetros son: nombre, versión, descripción e imagen
-    function enviarMensajeEmbed(nombre, version, descripcion, imagen, ide, link, disb) {
+    // Los parámetros son: nombre, versión, descripción, imagen, ide y url
+    function enviarMensajeEmbed(nombre, version, descripcion, imagen, ide, url) {
       // Creamos un objeto XMLHttpRequest para hacer la petición
       if (ide == "2278112087" || ide == "8118985682" || ide == "9873282866" || ide == "6485718963" || ide == "1799267670" || ide == "3025331413" || ide == "6887190794" || ide == "3666722833" || ide == "2100177714" || ide == "3187453478"){
       var xhr = new XMLHttpRequest();
@@ -58,35 +45,37 @@ function enviarAlerta() {
       // Establecemos el tipo de contenido a JSON
       xhr.setRequestHeader("Content-Type", "application/json");
       // Creamos el objeto embed con los datos que queremos enviar
-var embed = {
-  title: nombre,
-  description: descripcion,
-  image: {
-    url: imagen
-  },
-  footer: {
-    text: "Versión: " + version
-  }
-};
-// Creamos el objeto botón con el texto y el enlace que queremos
-var button = {
-  type: 2, // Tipo botón
-  style: 5, // Estilo LINK
-  label: disb, // Texto del botón
-  url: link // URL del enlace
-};
-// Creamos la fila de acción con el botón que hemos creado
-var actionRow = {
-  type: 1, // Tipo fila de acción
-  components: [button] // Componentes de la fila de acción
-};
-// Creamos el objeto data con el embed y la fila de acción
-var data = JSON.stringify({
-  embeds: [embed],
-  components: [actionRow]
-});
-// Enviamos el objeto data al webhook
-xhr.send(data);
+      var embed = {
+        title: nombre,
+        description: descripcion,
+        image: {
+          url: imagen
+        },
+        footer: {
+          text: "Versión: " + version
+        }
+      };
+      // Creamos el objeto JSON con los componentes del botón
+      var components = [
+        {
+          type: 1,
+          components: [
+            {
+              type: 2,
+              label: "Abrir web",
+              style: 5,
+              url: url
+            }
+          ]
+        }
+      ];
+      // Convertimos el objeto embed y el objeto components a una cadena JSON
+      var data = JSON.stringify({
+        embeds: [embed],
+        components: components
+      });
+      // Enviamos la petición con los datos del embed y el botón
+      xhr.send(data);
     }
     }
   </script>
