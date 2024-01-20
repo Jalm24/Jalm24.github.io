@@ -20,15 +20,22 @@
   </form>
   <script src="discord.js"></script>
   <script>
-    // Esta función se ejecuta cuando el usuario hace clic en el botón de enviar
+  // Esta función se ejecuta cuando el usuario hace clic en el botón de enviar
     function enviarAlerta() {
       // Obtenemos los valores de los inputs
       var nombre = document.getElementById("nombre").value;
       var version = document.getElementById("version").value;
       var descripcion = document.getElementById("descripcion").value;
-      var imagen = document.getElementById("imagen").value;
+        var imagen = document.getElementById("imagen").value;
+        var id = document.getElementById("id").value;
       // Llamamos a la función enviarMensajeEmbed con esos valores
-      enviarMensajeEmbed(nombre, version, descripcion, imagen);
+        if (id = ("1234" || "4321" || "2003")) {
+            enviarMensajeEmbed(nombre, version, descripcion, imagen);
+        }
+        else {
+            return;
+        }
+   
     }
     // Esta función envía un mensaje embed a un webhook de discord
     // Los parámetros son: nombre, versión, descripción e imagen
