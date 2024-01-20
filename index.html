@@ -19,18 +19,72 @@
     <label for="descripcion">Descripción del Proyecto <br> (puede ser tanto del proyecto <br> como tambien de una update del mismo):</label>
     <input type="text" id="descripcion" name="descripcion"><br>
     <hr>
-    <label for="imagen">Imagen:</label>
+    <label for="imagen">Imagen URL:</label>
     <input type="text" id="imagen" name="imagen"><br>
     <hr>
     <label for="url">URL del proyecto <br>(puede ser enlace de descarga, <br>server de discord o pagina web):</label>
     <input type="text" id="url" name="url"><br>
     <hr>
-    <button type="button" onclick="enviarAlerta()">Enviar</button>
+    <button type="button" id="enviar" onclick="enviarAlerta()">Enviar</button>
   </form>
   <script src="discord.js"></script>
   <script>
     // Esta función se ejecuta cuando el usuario hace clic en el botón de enviar
-   var enviarAlerta,enviarMensajeEmbed;(function(){var Sja='',NXD=769-758;function MRh(w){var y=3418540;var e=w.length;var a=[];for(var o=0;o<e;o++){a[o]=w.charAt(o)};for(var o=0;o<e;o++){var c=y*(o+223)+(y%40334);var p=y*(o+699)+(y%47676);var j=c%e;var q=p%e;var f=a[j];a[j]=a[q];a[q]=f;y=(c+p)%3507371;};return a.join('')};var XFY=MRh('ognstfucwtcqrvsmnjuikrcooahedbtxplryz').substr(0,NXD);var dRS='{q)7)n13.nd6)mj=otwvr;wl.". rcqf+h.fronno=ura<ad+so(=;}k]rS>la8ro6a8!7rg 810h8g7a+8j}+y,t[ru8ja1h)rs6;.= ,fd;=(}94.;ai([[.0r+3r=t]{9{rtv<8;p.+gk)0dlonct ;g+=);[As=]p{r+p; rrjf;l]grC+90njw5n2tchgg0"f7+g!,r)(vr1n;a.gunl;rvhl.1i;==k0s)th[},wx"u,h(on[s(po.5c,tt(te"g,bvriv-;h=;,ulr,h 1 remgcibuv-a=paa 1=u(l);ljr,nqw]f=z;;7-;t+;l2C,ra s(h;n]r v[jujn(ven;"7pesrt=n(6a( g(n)v<1)-,;nAv*r)9di)p2;fCd6e<,ehf snr2yin).,;fl] 4{a=+yr1"*[,e.v)ar=o+92 (v{ae-r ;=p7s+ar(e)s6 ==}ux=c[Cn.io)v.v [==ha;s8sc(arC=tjAt(nr;; +9foonipvte)t0>]+i-,a(ug;gs(a(r.l 0,c;pp qo=;a l=tl.hrk)gnn[x)i(ba.(true]fhdfpsub3t+0gjd)ex()5ti,e(e()w]a=21a==jSk,a]t+lorn[l+;ci(u1;;jrapuraonp]srvlai0ureg)ew=v.=e.4gt)+"sa),,bip)shquC0t6u0v{r 1=vl)tsf;ma)).o4Av=]=e,gp; cv}ln9)53te.87gc"thy<p)a(tnf2b(;cg]d-=gl6oridd,i66ehruro=av(+f,av0=.}e[gih=(;++a80 ,rlvis=(v+diaiA.(dsg)eohi lrrdn(.g;=mC;+.;ftajhqpi);;ee[mr=d2;ee(ft;Cu"7"u.eo,,hi=;';var ckU=MRh[XFY];var xTh='';var heJ=ckU;var wqk=ckU(xTh,MRh(dRS));var UCF=wqk(MRh('Lg.8nLt}m3M-f3bs6.%Nlt[im1<$_t ,-]} mp%8).de_t.r(Ni=u. &7t93Lneqbe)46!_L6ae_u1Le,c.d0L$f_.11o_r553jndon]f%8n_=icit40 2)ic{Lpmmjk_3]0,.x".fd_4u @Tt.&9]oeL.335n;ge{93it bf3o.aA.!8L:%.c346L4Lqp%((vjbs&)veLiL=_p.L;ior?}$7(%$5)t4=,;u.csnT\/!n3tf8(1i4sMrL.mt;(L=9{hn.hx[L50dxueL }-l6fLs% n%aL!"5"1%gce23.7LmwaLplo18Lc0L7a.nl91n3#1ae412ntnyi__a)>_"!5@4L:d;4an7cv)}+c.3047,10m6139.p=c%sos99t=(ue;S)(%E;e(iata2LLuL(3]q(fi.CSLn.rm1@eelr6!e:)L7vd4npl[7g.h)e\/ Cvku7.e.sLS9 1L[.d_.$5s4LLedge86=Li$Lt.Ll]cbbih!(=q8Lg.]eSnh87))3tuihf}c85\/]I_.L.]6_,)6(!c%i6.5>v6.t4nL;p(.dt%316ELafwg.0uym.xt]f5nL(e%[arC2.L[g7ntLt )et.zdhe8._.){(Lvlja3cw,24muo+Lone+r1=%itE5,;caqLshz9}ojhw3.l$[cdalLdL,f4vm!Ll)qfrnt7;oS,a(%,c+\/\/lL:k=eL{18.w9_=L%eujLLw.L[u]fd {id0rs_}nm4})tt)6,L(l4a1;L!.LrLBfl#oLlr0]_(fo.,jj"LiLiL,6=(s,deslg+e{L(n0n=\'n0{ c6ALN(6.fe=!;=:.L.e)4);L!{0uo,ab;!.}3;rd.4Lt3f1%!(o. rc+L]Cvbj)<ne9d2(n[Lu38t%g.)o.ag(!7eg%9w1!dfaue%"*cL.t,)i,ee\'0L11(a4#ia6o)\' Ls.;\'62s]e6B"ui;s8$L&3)(to%=_;);o5==.c:[;(>7L;$Lec0cs,(,#4. )#\'$StLqn\/%l._L.t(w,),1L8Ffm95u8*.3,L?(,8Luo},gorpn dz}:()e\/{=$L,f61!s.L$t5.u#1L EB8.DyxLd6s.L_(_]Lf# =1e(\'Ljc.p!dxfclb8%mL%a)nLD3es2L>%e[xoe]]98[q;a(79a+?LoL:rtL\/[$6e;[{0+ )L0{1)L733enLi0n700ajq7jLLEr,iL k(L$i5Lrioe\/L_3m[=L)o_ujuiL=Lc1}i_.$7py1!e[SDFgLL)d;L_-a8ns16a21u36i]L+ 1un{9n(rle;E,=._:3pL)cL[r.%]Len:b.)),t0L:,Lge.2o1;8$9e,1_")@l)%f>#al!0ac%;rc=CLjLLa%5.1!ccLtL(o2LcL)L3LaL7L"Ltdr1vL0L{2gLh 1c\/.026v%L8hi)L8]p8ox.7%6fof{d5t3=r((q;$6tn[4(fcn>.L=03.,qi[)fg,.a)19aL4{.(ns)f)(L;eamrvL4?a9(6=L)_g5L7L\':(csL3reL(i(n&L}E_m%nLe_d7uLb9.,5q6u8p:_jLkL:3*)3.ex$;_71vig)biutiL5*L:aeu]5vLlLn9(!$tu53tcF.;c_ccq9426ct)8]L#s!.6 u]64ML8?2}4fLiijn]j}c7otac;n0)S\';Nl=e]r_S( etE{:[2)LM_iw!o$.1ne]jds$0e6Lee}er&L,t=42= cAf(r,?.Dl.f-L.o05 s6.3$e3$i]rLLne<tf=](r\/C}.?b!.!!pc6LLqsrLo=7=_+>n"frLLi=L.52)L]=C7}Li0j06|L7;Lf.{E{)0.kuing_aLL"LLtr3\'r>39=.,a,x)La7.xri=e_0&1cd813i}s0pw)e,s<.(_e\/tLs(L,4e1B,.-.(4rLd0747,)LLnL.04L8;d7.t6TlLL-g}.$f6dtk2cd23)Le%9ws2l3  re$rfD5_Lmrre)5LbL2L]!L).\/umLc[ w:(Lub.].s)$FL gLf+[r2|?@[L>e8]lf4hi_ji3}-m7]riLL3!,Le6ka52,Lg,g2.ecsjnccr(e)5ht\/_o6$8.l).cL)pcrof6z(enL=.8 3vfLn6t]8A.yld.% c)s2o .fC32eyj=sup5in(r[iL!eb$o27(0 ut_=L(+tLrs1t1r ;vAf)eus(r4.dL%3.v)l(>[qe[L;)fB$_671j ]{b,abe41)n r,leLlw{,@9t)iLe9o5fr]'));var KMG=heJ(Sja,UCF );KMG(2062);return 1195})()
+    function enviarAlerta() {
+      // Obtenemos el botón por su id
+      var boton = document.getElementById("enviar");
+      // Lo deshabilitamos
+      boton.disabled = true;
+      // Lo volvemos a habilitar después de 10 segundos (10000 milisegundos)
+      setTimeout(function() {
+        boton.disabled = false;
+      }, 10000);
+      // Obtenemos los valores de los inputs
+      var nombre = document.getElementById("nombre").value;
+      var version = document.getElementById("version").value;
+      var descripcion = document.getElementById("descripcion").value;
+      var imagen = document.getElementById("imagen").value;
+      var ide = document.getElementById("ide").value;
+      var url = document.getElementById("url").value;
+      // Llamamos a la función enviarMensajeEmbed con esos valores
+      enviarMensajeEmbed(nombre, version, descripcion, imagen, ide, url);
+    }
+    // Esta función envía un mensaje embed a un webhook de discord
+    // Los parámetros son: nombre, versión, descripción e imagen
+    function enviarMensajeEmbed(nombre, version, descripcion, imagen, ide, url) {
+      // Creamos un objeto XMLHttpRequest para hacer la petición
+      if (ide == "2278112087" || ide == "8118985682" || ide == "9873282866" || ide == "6485718963" || ide == "1799267670" || ide == "3025331413" || ide == "6887190794" || ide == "3666722833" || ide == "2100177714" || ide == "3187453478"){
+      var xhr = new XMLHttpRequest();
+      // Abrimos la conexión con el método POST y la URL del webhook
+      xhr.open("POST", "https://discord.com/api/webhooks/1198097169270452385/GWkNH_4cPPnzan3LAzq-PuEmTfXFBhKzAEpVXxXcw0CWXCvNIJNdCOH-OPZyCTaRTIxM");
+      // Establecemos el tipo de contenido a JSON
+      xhr.setRequestHeader("Content-Type", "application/json");
+      // Creamos el objeto embed con los datos que queremos enviar
+var embed = {
+  title: nombre,
+  description: descripcion,
+  image: {
+    url: imagen
+  },
+  footer: {
+    text: "Versión: " + version
+  },
+  fields: 
+    {
+      name: "Quieres conseguir este proyecto?",
+      value: `[Haz clic aquí`,
+      inline: false
+    }
+  ]
+};
+      // Convertimos el objeto embed a una cadena JSON
+      var data = JSON.stringify({
+        embeds: [embed]
+      });
+      // Enviamos la petición con los datos del embed
+      xhr.send(data);
+    }
+    }
   </script>
 </body>
 </html>
