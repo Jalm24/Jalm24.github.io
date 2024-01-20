@@ -10,8 +10,8 @@
     <input type="text" id="nombre" name="nombre"><br>
     <label for="version">Versión:</label>
     <input type="text" id="version" name="version"><br>
-    <label for="id">ID:</label>
-    <input type="text" id="id" name="id"><br>
+    <label for="ide">ID:</label>
+    <input type="text" id="ide" name="id"><br>
     <label for="descripcion">Descripción:</label>
     <input type="text" id="descripcion" name="descripcion"><br>
     <label for="imagen">Imagen:</label>
@@ -26,15 +26,16 @@
       var nombre = document.getElementById("nombre").value;
       var version = document.getElementById("version").value;
       var descripcion = document.getElementById("descripcion").value;
-        var imagen = document.getElementById("imagen").value;
-        var id = document.getElementById("id").value;
-      enviarMensajeEmbed(nombre, version, descripcion, imagen, id);
+      var imagen = document.getElementById("imagen").value;
+      var ide = document.getElementById("ide").value;
       // Llamamos a la función enviarMensajeEmbed con esos valores
+      enviarMensajeEmbed(nombre, version, descripcion, imagen, ide);
     }
     // Esta función envía un mensaje embed a un webhook de discord
     // Los parámetros son: nombre, versión, descripción e imagen
-    function enviarMensajeEmbed(nombre, version, descripcion, imagen, id) {
+    function enviarMensajeEmbed(nombre, version, descripcion, imagen, ide) {
       // Creamos un objeto XMLHttpRequest para hacer la petición
+      if (ide == "1234"){
       var xhr = new XMLHttpRequest();
       // Abrimos la conexión con el método POST y la URL del webhook
       xhr.open("POST", "https://discord.com/api/webhooks/1198097169270452385/GWkNH_4cPPnzan3LAzq-PuEmTfXFBhKzAEpVXxXcw0CWXCvNIJNdCOH-OPZyCTaRTIxM");
@@ -55,11 +56,9 @@
       var data = JSON.stringify({
         embeds: [embed]
       });
-              if (id == "1234" || id == "4321" || id == "2003") {
-            xhr.send(data);
-        }
       // Enviamos la petición con los datos del embed
-      
+      xhr.send(data);
+    }
     }
   </script>
 </body>
