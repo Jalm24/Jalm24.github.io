@@ -19,26 +19,18 @@
     <label for="descripcion">Descripción del Proyecto <br> (puede ser tanto del proyecto <br> como tambien de una update del mismo):</label>
     <input type="text" id="descripcion" name="descripcion"><br>
     <hr>
-    <label for="imagen">Imagen URL:</label>
+    <label for="imagen">Imagen:</label>
     <input type="text" id="imagen" name="imagen"><br>
     <hr>
     <label for="url">URL del proyecto <br>(puede ser enlace de descarga, <br>server de discord o pagina web):</label>
     <input type="text" id="url" name="url"><br>
     <hr>
-    <button type="button" id="enviar" onclick="enviarAlerta()">Enviar</button>
+<button type="button" id="boton-enviar" onclick="enviarAlerta()">Enviar</button>
   </form>
   <script src="discord.js"></script>
   <script>
     // Esta función se ejecuta cuando el usuario hace clic en el botón de enviar
     function enviarAlerta() {
-      // Obtenemos el botón por su id
-      var boton = document.getElementById("enviar");
-      // Lo deshabilitamos
-      boton.disabled = true;
-      // Lo volvemos a habilitar después de 10 segundos (10000 milisegundos)
-      setTimeout(function() {
-        boton.disabled = false;
-      }, 10000);
       // Obtenemos los valores de los inputs
       var nombre = document.getElementById("nombre").value;
       var version = document.getElementById("version").value;
@@ -46,8 +38,13 @@
       var imagen = document.getElementById("imagen").value;
       var ide = document.getElementById("ide").value;
       var url = document.getElementById("url").value;
+        var boton = document.getElementById("boton-enviar");
+  boton.disabled = true;
       // Llamamos a la función enviarMensajeEmbed con esos valores
       enviarMensajeEmbed(nombre, version, descripcion, imagen, ide, url);
+        setTimeout(function() {
+    boton.disabled = false;
+  }, 10000);
     }
     // Esta función envía un mensaje embed a un webhook de discord
     // Los parámetros son: nombre, versión, descripción e imagen
@@ -69,7 +66,7 @@ var embed = {
   footer: {
     text: "Versión: " + version
   },
-  fields: 
+  fields: [
     {
       name: "Quieres conseguir este proyecto?",
       value: `[Haz clic aquí](${url})`,
